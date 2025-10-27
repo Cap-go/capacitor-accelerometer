@@ -22,7 +22,7 @@ public class CapacitorAccelerometerPlugin: CAPPlugin, CAPBridgedPlugin {
     private let queue = OperationQueue()
     private var latestMeasurement: [String: Double] = ["x": 0, "y": 0, "z": 0]
 
-    public override func load() {
+    override public func load() {
         super.load()
         queue.qualityOfService = .userInteractive
         motionManager.accelerometerUpdateInterval = 0.02

@@ -81,7 +81,10 @@ export class CapacitorAccelerometerWeb extends WebPlugin implements CapacitorAcc
     return { accelerometer: this.permissionState };
   }
 
-  async addListener(eventName: 'measurement', listenerFunc: (event: Measurement) => void): Promise<PluginListenerHandle> {
+  async addListener(
+    eventName: 'measurement',
+    listenerFunc: (event: Measurement) => void,
+  ): Promise<PluginListenerHandle> {
     const handle = await super.addListener(eventName, listenerFunc);
     return handle;
   }
