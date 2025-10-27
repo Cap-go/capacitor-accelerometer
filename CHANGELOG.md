@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## 7.1.0 (2025-10-27)
+
+
+### Features
+
+* add getPluginVersion + lint ([79893a8](https://github.com/Cap-go/capacitor-accelerometer/commit/79893a80fc832d1b1070ab730e8415b2b299b258))
+* add package lock ios ([27e238f](https://github.com/Cap-go/capacitor-accelerometer/commit/27e238f1461b68381851103f58edc888c0344ac8))
+* add plugin version retrieval method and update workflows for changelog generation ([b5f134e](https://github.com/Cap-go/capacitor-accelerometer/commit/b5f134e2622516d0ae107d1d267710a545331628))
+* enhance documentation for download functionality and options ([ecef064](https://github.com/Cap-go/capacitor-accelerometer/commit/ecef0649bf810f3cacc340ab3d2bc9eabd0be768))
+
+
+### Bug Fixes
+
+* add android and ios cache ([e4ea1da](https://github.com/Cap-go/capacitor-accelerometer/commit/e4ea1dad4e3bb7f6a405fdb87109c973ea6b249c))
+* add github actions ([d0a9021](https://github.com/Cap-go/capacitor-accelerometer/commit/d0a9021b81ebce4aee8dc5d26e861f8e8a768ccd))
+* add missing capgo headers ([2c4545c](https://github.com/Cap-go/capacitor-accelerometer/commit/2c4545c78440ba4363b2c060937146fbed278ff1))
+* add missing licence ([5d8047a](https://github.com/Cap-go/capacitor-accelerometer/commit/5d8047a11f9c2113378797cb2bed92cf43c7a914))
+* add pnpm ([288eb13](https://github.com/Cap-go/capacitor-accelerometer/commit/288eb1306097efb48b2e9a924a02d86e6191dca0))
+* artefact issue ([c84c0b4](https://github.com/Cap-go/capacitor-accelerometer/commit/c84c0b4532cedc05481c648afff8052c2c326c92))
+* build ([ba28667](https://github.com/Cap-go/capacitor-accelerometer/commit/ba286676ad296ef7c462cea5343edbf89cf0a5cd))
+* deploy ([18e8fc9](https://github.com/Cap-go/capacitor-accelerometer/commit/18e8fc966ab0cbd0642f58b6d0a82aa98be05b7b))
+* deps issue ([7e91427](https://github.com/Cap-go/capacitor-accelerometer/commit/7e91427829473de5b41b3c400391e28563ae30ba))
+* do not use libs native was enought ([af63742](https://github.com/Cap-go/capacitor-accelerometer/commit/af637422b1b956e355cf021777ba7aeddc137aac))
+* DOC ([a0a0608](https://github.com/Cap-go/capacitor-accelerometer/commit/a0a060848aa56440bb96b5472a191c1f727a1571))
+* github push ([cd82789](https://github.com/Cap-go/capacitor-accelerometer/commit/cd82789cc9d05d9d1e98cbd4b6fd77b9029fc7f8))
+* gitignore ([e80dd38](https://github.com/Cap-go/capacitor-accelerometer/commit/e80dd380c0bb9eced645c68435060a969fb86643))
+* issues push ([15ceaf6](https://github.com/Cap-go/capacitor-accelerometer/commit/15ceaf68116cacde5efff7192105d956486d7267))
+* lint ([7d55ee8](https://github.com/Cap-go/capacitor-accelerometer/commit/7d55ee89ba5964cc0f55e7757c1fd2b64ec565af))
+* lint ([76bcf91](https://github.com/Cap-go/capacitor-accelerometer/commit/76bcf9160d30b71743bc4b80031f8d3a8bb27d6b))
+* lint ([7dfa9e6](https://github.com/Cap-go/capacitor-accelerometer/commit/7dfa9e667b7ca769b363e78d8e5a59df7ae772c8))
+* lint config ([fa1939a](https://github.com/Cap-go/capacitor-accelerometer/commit/fa1939a9892fb6fd82681066be0de7cfb97ead90))
+* lock and lint ([2708a6f](https://github.com/Cap-go/capacitor-accelerometer/commit/2708a6fce34d99dbf793d115de62e0140481ba22))
+* prevent bump for app ([1865c14](https://github.com/Cap-go/capacitor-accelerometer/commit/1865c14b328855b4503f1c5782d158add97ff84d))
+* publish ([b105567](https://github.com/Cap-go/capacitor-accelerometer/commit/b10556707c8233a38e79ff239bf20a05b76805d0))
+* publish ([fa3a091](https://github.com/Cap-go/capacitor-accelerometer/commit/fa3a09140434d3a262ab15981e181e80e613b970))
+* publish to repo ([05e897c](https://github.com/Cap-go/capacitor-accelerometer/commit/05e897cc7e5277c498788307a65ebed4b9ae8c54))
+* remove footer in discord ([d8c1e7e](https://github.com/Cap-go/capacitor-accelerometer/commit/d8c1e7efc79338cca6d9bef6e911ea2b92fedfda))
+* script ([aff7c24](https://github.com/Cap-go/capacitor-accelerometer/commit/aff7c24b6d38de1dc652fd6d9737f77a004093aa))
+* swift version ([a806b91](https://github.com/Cap-go/capacitor-accelerometer/commit/a806b91fbab4b213e4140f5c5b56a342244a4410))
+* test new action ([5888614](https://github.com/Cap-go/capacitor-accelerometer/commit/588861490e5169bb5e1c96c2dafe1aaca0d63daf))
+* test new system for action ([78c69b4](https://github.com/Cap-go/capacitor-accelerometer/commit/78c69b490e5b82d19e061f4681a6568349bba79e))
+* try correct push ([0bc5439](https://github.com/Cap-go/capacitor-accelerometer/commit/0bc54395953c9b6ae982c527f1c69ebe0c1bbbea))
+* try new build and bumb system ([192367c](https://github.com/Cap-go/capacitor-accelerometer/commit/192367c47fe4b76fc552e78aaca42181dab19240))
+* try other way ([0d0d4cb](https://github.com/Cap-go/capacitor-accelerometer/commit/0d0d4cbd0411d66a905de38a98ba8bfd8cd48405))
+* try to get correct tag ([a81b2b8](https://github.com/Cap-go/capacitor-accelerometer/commit/a81b2b807490de43f03ca21019d6ddefa4b2399b))
+* update capacitor-swift-pm to version 7.0.0 ([c555d56](https://github.com/Cap-go/capacitor-accelerometer/commit/c555d56ebb8c1c7544723165aabe4e65bbc160ae))
+* update Discord webhook username to include repository name ([720b250](https://github.com/Cap-go/capacitor-accelerometer/commit/720b25089f5f39320f819d02e716f7569d65b344))
+* update to cap 7 ([7d7dd6c](https://github.com/Cap-go/capacitor-accelerometer/commit/7d7dd6c064ba5f74f27101ab23916bdab31e5c8e))
+* updates versions ([79ac707](https://github.com/Cap-go/capacitor-accelerometer/commit/79ac7078da8a8c633c7f61fc1f96d3dac5881df2))
+* use better cache ([8bfaa5c](https://github.com/Cap-go/capacitor-accelerometer/commit/8bfaa5c8e1adbfd8c2b86fc99fa5d97842b52330))
+* use cache v4 ([da7b4f1](https://github.com/Cap-go/capacitor-accelerometer/commit/da7b4f1fb7f6b2aa3982bec1029f6f77ec4f407a))
+
 ## [7.2.0](https://github.com/Cap-go/capacitor-downloader/compare/7.1.5...7.2.0) (2025-10-26)
 
 
