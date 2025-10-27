@@ -4,6 +4,7 @@ import Foundation
 
 @objc(CapacitorAccelerometerPlugin)
 public class CapacitorAccelerometerPlugin: CAPPlugin, CAPBridgedPlugin {
+    private let PLUGIN_VERSION: String = "7.0.0"
     public let identifier = "CapacitorAccelerometerPlugin"
     public let jsName = "CapacitorAccelerometer"
     public let pluginMethods: [CAPPluginMethod] = [
@@ -13,7 +14,8 @@ public class CapacitorAccelerometerPlugin: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "stopMeasurementUpdates", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "checkPermissions", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "requestPermissions", returnType: CAPPluginReturnPromise),
-        CAPPluginMethod(name: "removeAllListeners", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "removeAllListeners", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "getPluginVersion", returnType: CAPPluginReturnPromise)
     ]
 
     private let motionManager = CMMotionManager()
@@ -110,5 +112,9 @@ public class CapacitorAccelerometerPlugin: CAPPlugin, CAPBridgedPlugin {
         }
 
         return "granted"
+    }
+
+    @objc func getPluginVersion(_ call: CAPPluginCall) {
+        call.resolve(["version": self.PLUGIN_VERSION])
     }
 }

@@ -89,6 +89,10 @@ export class CapacitorAccelerometerWeb extends WebPlugin implements CapacitorAcc
     await super.removeAllListeners();
   }
 
+  async getPluginVersion(): Promise<{ version: string }> {
+    return { version: 'web' };
+  }
+
   private async ensurePermission(request: boolean): Promise<void> {
     if (!this.supportsDeviceMotion()) {
       this.permissionState = 'denied';
