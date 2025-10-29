@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.1.2](https://github.com/Cap-go/capacitor-accelerometer/compare/7.1.1...7.1.2) (2025-10-29)
+
+
+### Bug Fixes
+
+* CI/CD config ([415e6e8](https://github.com/Cap-go/capacitor-accelerometer/commit/415e6e84a2822ed9f4b8a7242c8d3b5c4904e06f))
+* update AI model in build workflow ([36704d5](https://github.com/Cap-go/capacitor-accelerometer/commit/36704d57eabca38a05abb2a5e8b6269e77003fe0))
+* update github action ([d2eb92c](https://github.com/Cap-go/capacitor-accelerometer/commit/d2eb92c9820bfbf2d189f9230a473ffdd17350ba))
+
 ## [7.1.1](https://github.com/Cap-go/capacitor-accelerometer/compare/7.1.0...7.1.1) (2025-10-27)
 
 
