@@ -15,7 +15,7 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "CapacitorAccelerometer")
 public class CapacitorAccelerometerPlugin extends Plugin implements SensorEventListener {
 
-    private final String pluginVersion = "7.1.3";
+    private final String pluginVersion = "7.1.4";
     private static final String PERMISSION_GRANTED = "granted";
     private static final String PERMISSION_DENIED = "denied";
 
