@@ -11,6 +11,18 @@ Access raw accelerometer measurements across iOS, Android, and the Web.
 
 WIP: the plugin is not yet ready for production
 
+## Why Capacitor Accelerometer?
+
+The only **free** and **maintained** Capacitor plugin for accelerometer access. Other plugins are either paid or no longer updated. This plugin provides:
+
+- **Up-to-date implementation** - Uses the latest APIs across all platforms
+- **Consistent JavaScript API** - Same interface as popular paid alternatives
+- **Cross-platform** - Works on iOS, Android, and Web
+- **Permission handling** - Built-in permission management
+- **Real-time streaming** - Listen to continuous accelerometer updates
+
+Perfect for fitness apps, games, gesture detection, and motion-based interfaces.
+
 ## Documentation
 
 The most complete doc is available here: https://capgo.app/docs/plugins/accelerometer/
