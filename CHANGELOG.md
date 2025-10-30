@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.1.3](https://github.com/Cap-go/capacitor-accelerometer/compare/7.1.2...7.1.3) (2025-10-30)
+
+
+### Bug Fixes
+
+* pluginVersion lint issue ([b7678a1](https://github.com/Cap-go/capacitor-accelerometer/commit/b7678a1df0e995c94a3754e0e9cad00786b257ec))
+* update package reference from capacitor-downloader to capacitor-accelerometer ([94b6a5d](https://github.com/Cap-go/capacitor-accelerometer/commit/94b6a5db9210666d8c9b4e94d1989fe3b17e501d))
+
 ## [7.1.2](https://github.com/Cap-go/capacitor-accelerometer/compare/7.1.1...7.1.2) (2025-10-29)
 
 
