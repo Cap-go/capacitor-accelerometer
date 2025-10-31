@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.1.5](https://github.com/Cap-go/capacitor-accelerometer/compare/7.1.4...7.1.5) (2025-10-31)
+
+
+### Bug Fixes
+
+* remove WIP status ([599fa1f](https://github.com/Cap-go/capacitor-accelerometer/commit/599fa1f46986f131b384bf69e0081b735d2292ea))
+
 ## [7.1.4](https://github.com/Cap-go/capacitor-accelerometer/compare/7.1.3...7.1.4) (2025-10-30)
 
 ## [7.1.3](https://github.com/Cap-go/capacitor-accelerometer/compare/7.1.2...7.1.3) (2025-10-30)
