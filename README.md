@@ -9,8 +9,6 @@
 
 Access raw accelerometer measurements across iOS, Android, and the Web.
 
-WIP: the plugin is not yet ready for production
-
 ## Why Capacitor Accelerometer?
 
 The only **free** and **maintained** Capacitor plugin for accelerometer access. Other plugins are either paid or no longer updated. This plugin provides:
