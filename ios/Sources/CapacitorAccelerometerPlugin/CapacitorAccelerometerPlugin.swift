@@ -98,20 +98,16 @@ public class CapacitorAccelerometerPlugin: CAPPlugin, CAPBridgedPlugin {
             return "denied"
         }
 
-        if #available(iOS 11.0, *) {
-            switch CMMotionActivityManager.authorizationStatus() {
-            case .authorized:
-                return "granted"
-            case .denied, .restricted:
-                return "denied"
-            case .notDetermined:
-                return "prompt"
-            @unknown default:
-                return "prompt"
-            }
+        switch CMMotionActivityManager.authorizationStatus() {
+        case .authorized:
+            return "granted"
+        case .denied, .restricted:
+            return "denied"
+        case .notDetermined:
+            return "prompt"
+        @unknown default:
+            return "prompt"
         }
-
-        return "granted"
     }
 
     @objc func getPluginVersion(_ call: CAPPluginCall) {
