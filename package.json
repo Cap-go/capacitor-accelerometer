@@ -1,6 +1,6 @@
 {
   "name": "@capgo/capacitor-accelerometer",
-  "version": "8.0.3",
+  "version": "8.0.4",
   "description": "Read device accelerometer measurements with Capacitor",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
