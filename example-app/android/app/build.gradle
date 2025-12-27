@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "app.capgo.accelerometer"
+    namespace = "app.capgo.accelerometer"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "app.capgo.accelerometer"
