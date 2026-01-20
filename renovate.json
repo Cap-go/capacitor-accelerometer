@@ -47,7 +47,8 @@
     },
     {
       "matchPackageNames": [
-        "ionic-team/capacitor-swift-pm"
+        "ionic-team/capacitor-swift-pm",
+        "capacitor-swift-pm"
       ],
       "matchManagers": [
         "swift-pm"
