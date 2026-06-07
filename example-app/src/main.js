@@ -1,3 +1,5 @@
+import { CapacitorUpdater } from '@capgo/capacitor-updater';
+import { Capacitor } from '@capacitor/core';
 import './style.css';
 import { CapacitorAccelerometer } from '@capgo/capacitor-accelerometer';
 
@@ -79,3 +81,9 @@ singleReadButton.addEventListener('click', readOnce);
 
 refreshAvailability();
 refreshPermission();
+
+if (Capacitor.isNativePlatform()) {
+  CapacitorUpdater.notifyAppReady().catch((error) => {
+    console.error('Capgo notifyAppReady failed', error);
+  });
+}
