@@ -11,8 +11,9 @@ let package = Package(
             targets: ["CapApp-SPM"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "8.0.0"),
-        .package(name: "CapgoCapacitorAccelerometer", path: "../../../node_modules/.bun/@capgo+capacitor-accelerometer@file+../node_modules/@capgo/capacitor-accelerometer")
+        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", exact: "8.3.3"),
+        .package(name: "CapgoCapacitorAccelerometer", path: "../../../node_modules/.bun/@capgo+capacitor-accelerometer@file+../node_modules/@capgo/capacitor-accelerometer"),
+        .package(name: "CapgoCapacitorUpdater", path: "../../../node_modules/.bun/@capgo+capacitor-updater@8.47.10+73a76fe9b2b73c4e/node_modules/@capgo/capacitor-updater")
     ],
     targets: [
         .target(
@@ -20,7 +21,8 @@ let package = Package(
             dependencies: [
                 .product(name: "Capacitor", package: "capacitor-swift-pm"),
                 .product(name: "Cordova", package: "capacitor-swift-pm"),
-                .product(name: "CapgoCapacitorAccelerometer", package: "CapgoCapacitorAccelerometer")
+                .product(name: "CapgoCapacitorAccelerometer", package: "CapgoCapacitorAccelerometer"),
+                .product(name: "CapgoCapacitorUpdater", package: "CapgoCapacitorUpdater")
             ]
         )
     ]
