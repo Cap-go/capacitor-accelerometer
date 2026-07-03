@@ -57,6 +57,23 @@ npm install @capgo/capacitor-accelerometer
 npx cap sync
 ```
 
+## Configuration
+
+### iOS
+
+Add the following to your app's `Info.plist`. iOS requires this key before the Motion & Fitness permission dialog can appear:
+
+```xml
+<key>NSMotionUsageDescription</key>
+<string>We need access to motion data to read accelerometer measurements</string>
+```
+
+Then call `requestPermissions()` (or start measurement updates) to trigger the system prompt.
+
+### Android
+
+No additional configuration is required. Android does not expose a dedicated runtime permission for raw accelerometer access on supported devices.
+
 ## API
 
 <docgen-index>
