@@ -21,6 +21,7 @@ public class CapacitorAccelerometerPlugin: CAPPlugin, CAPBridgedPlugin {
     private let motionManager = CMMotionManager()
     private let queue = OperationQueue()
     private var latestMeasurement: [String: Double] = ["x": 0, "y": 0, "z": 0]
+    private var permissionRequestResolved = false
 
     override public func load() {
         super.load()
@@ -84,9 +85,29 @@ public class CapacitorAccelerometerPlugin: CAPPlugin, CAPBridgedPlugin {
     @objc override public func checkPermissions(_ call: CAPPluginCall) {
         call.resolve(["accelerometer": currentPermissionState()])
     }
-
     @objc override public func requestPermissions(_ call: CAPPluginCall) {
-        call.resolve(["accelerometer": currentPermissionState()])
+        guard motionManager.isAccelerometerAvailable else {
+            call.resolve(["accelerometer": "denied"])
+            return
+        }
+
+        let status = CMMotionActivityManager.authorizationStatus()
+        if status != .notDetermined {
+            call.resolve(["accelerometer": currentPermissionState()])
+            return
+        }
+
+        permissionRequestResolved = false
+        motionManager.startAccelerometerUpdates(to: queue) { [weak self] _, _ in
+            guard let self, !self.permissionRequestResolved else { return }
+            self.permissionRequestResolved = true
+            if self.motionManager.isAccelerometerActive {
+                self.motionManager.stopAccelerometerUpdates()
+            }
+            DispatchQueue.main.async {
+                call.resolve(["accelerometer": self.currentPermissionState()])
+            }
+        }
     }
 
     @objc override public func removeAllListeners(_ call: CAPPluginCall) {
