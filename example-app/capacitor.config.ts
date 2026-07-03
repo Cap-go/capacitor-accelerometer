@@ -4,7 +4,7 @@ import pkg from './package.json';
 
 const config: CapacitorConfig = {
   appId: 'app.capgo.accelerometer',
-  appName: 'Accelerometer Example',
+  appName: '@capgo/capacitor-accelerometer',
   webDir: 'dist',
   plugins: {
     SplashScreen: {
