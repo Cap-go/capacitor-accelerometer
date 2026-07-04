@@ -9,6 +9,7 @@ const permissionLabel = document.getElementById('permission');
 const startButton = document.getElementById('start-updates');
 const stopButton = document.getElementById('stop-updates');
 const singleReadButton = document.getElementById('read-once');
+const requestPermissionButton = document.getElementById('request-permission');
 
 let measurementListener;
 
@@ -17,6 +18,10 @@ function formatMeasurement(measurement) {
   const y = measurement.y?.toFixed(3) ?? '0.000';
   const z = measurement.z?.toFixed(3) ?? '0.000';
   return `x: ${x}g | y: ${y}g | z: ${z}g`;
+}
+
+function isPermissionGranted(state) {
+  return state === 'granted' || state === 'limited';
 }
 
 async function refreshAvailability() {
@@ -30,10 +35,22 @@ async function refreshPermission() {
 }
 
 async function ensurePermission() {
-  const { accelerometer } = await CapacitorAccelerometer.requestPermissions();
+  const { accelerometer } = await CapacitorAccelerometer.checkPermissions();
   permissionLabel.textContent = accelerometer;
-  if (accelerometer !== 'granted') {
-    throw new Error(`Permission not granted: ${accelerometer}`);
+  if (!isPermissionGranted(accelerometer)) {
+    throw new Error(`Permission not granted (${accelerometer}). Tap "Request Permission" first.`);
+  }
+}
+
+async function requestPermission() {
+  try {
+    const { accelerometer } = await CapacitorAccelerometer.requestPermissions();
+    permissionLabel.textContent = accelerometer;
+    measurementLabel.textContent = isPermissionGranted(accelerometer)
+      ? 'Permission granted. You can start updates or read once.'
+      : `Permission state: ${accelerometer}`;
+  } catch (error) {
+    measurementLabel.textContent = error.message;
   }
 }
 
@@ -75,6 +92,7 @@ async function stopUpdates() {
   singleReadButton.disabled = false;
 }
 
+requestPermissionButton.addEventListener('click', requestPermission);
 startButton.addEventListener('click', startUpdates);
 stopButton.addEventListener('click', stopUpdates);
 singleReadButton.addEventListener('click', readOnce);

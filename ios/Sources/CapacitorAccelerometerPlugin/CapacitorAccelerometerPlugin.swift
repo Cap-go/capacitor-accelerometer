@@ -21,6 +21,7 @@ public class CapacitorAccelerometerPlugin: CAPPlugin, CAPBridgedPlugin {
     private let motionManager = CMMotionManager()
     private let queue = OperationQueue()
     private var latestMeasurement: [String: Double] = ["x": 0, "y": 0, "z": 0]
+    private var pendingPermissionCall: CAPPluginCall?
 
     override public func load() {
         super.load()
@@ -84,9 +85,49 @@ public class CapacitorAccelerometerPlugin: CAPPlugin, CAPBridgedPlugin {
     @objc override public func checkPermissions(_ call: CAPPluginCall) {
         call.resolve(["accelerometer": currentPermissionState()])
     }
-
     @objc override public func requestPermissions(_ call: CAPPluginCall) {
-        call.resolve(["accelerometer": currentPermissionState()])
+        guard motionManager.isAccelerometerAvailable else {
+            call.resolve(["accelerometer": "denied"])
+            return
+        }
+
+        if motionManager.isAccelerometerActive {
+            call.resolve(["accelerometer": currentPermissionState()])
+            return
+        }
+
+        let status = CMMotionActivityManager.authorizationStatus()
+        if status != .notDetermined {
+            call.resolve(["accelerometer": currentPermissionState()])
+            return
+        }
+
+        if pendingPermissionCall != nil {
+            call.reject("Permission request already in progress")
+            return
+        }
+
+        pendingPermissionCall = call
+        var finished = false
+
+        let finish: () -> Void = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self, !finished else { return }
+                finished = true
+                guard let pendingCall = self.pendingPermissionCall else { return }
+                self.pendingPermissionCall = nil
+                if self.motionManager.isAccelerometerActive {
+                    self.motionManager.stopAccelerometerUpdates()
+                }
+                pendingCall.resolve(["accelerometer": self.currentPermissionState()])
+            }
+        }
+
+        motionManager.startAccelerometerUpdates(to: OperationQueue.main) { _, _ in
+            finish()
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: finish)
     }
 
     @objc override public func removeAllListeners(_ call: CAPPluginCall) {
