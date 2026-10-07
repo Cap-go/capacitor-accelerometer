@@ -1,13 +1,27 @@
 # @capgo/capacitor-accelerometer
-<a href="https://capgo.app/"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-accelerometer" alt="Capgo - Instant updates for Capacitor" /></a>
+
+Read raw accelerometer data on iOS, Android and the web with one API, as the latest sample or as a live stream. Build motion features, games and gesture detection without paid plugins.
+
+<a href="https://capgo.app/?ref=plugin_accelerometer"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-accelerometer" alt="Capgo - Instant updates for Capacitor" /></a>
 
 <div align="center">
-  <h2><a href="https://capgo.app/?ref=plugin_accelerometer"> ➡️ Get Instant updates for your App with Capgo</a></h2>
-  <h2><a href="https://capgo.app/consulting/?ref=plugin_accelerometer"> Missing a feature? We’ll build the plugin for you 💪</a></h2>
+  <p><b>Capgo</b>: open-source live updates for Ionic and Capacitor apps. Ship OTA fixes and features instantly, without waiting for app store review.</p>
+  <h2><a href="https://capgo.app/register/?ref=plugin_accelerometer">➡️ Get started for free</a></h2>
+  <p>14-day unlimited free trial. No credit card required</p>
+  <p><a href="https://capgo.app/consulting/?ref=plugin_accelerometer">Missing a feature? We'll build the plugin for you 💪</a></p>
 </div>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Cap-go/capacitor-accelerometer/main/assets/github-social-preview.png" alt="@capgo/capacitor-accelerometer for Capacitor apps" width="300" />
+</p>
 
-Access raw accelerometer measurements across iOS, Android, and the Web.
+## Key features
+
+- **Latest sample**: `getMeasurement()` returns the most recent x, y and z acceleration recorded by the native layer.
+- **Live updates**: `startMeasurementUpdates()` streams readings to the `measurement` listener until `stopMeasurementUpdates()`.
+- **Availability check**: `isAvailable()` tells you whether the device has an accelerometer.
+- **Permissions**: `checkPermissions()` and `requestPermissions()` handle motion access where the platform requires it.
+- **Platforms**: iOS, Android and Web. iOS uses Core Motion, Android uses `SensorManager`, and web listens to browser motion events.
 
 ## Why Capacitor Accelerometer?
 
