@@ -17,9 +17,9 @@ Read raw accelerometer data on iOS, Android and the web with one API, as the lat
 
 ## Key features
 
-- **Latest sample**: `getMeasurement()` returns the most recent x, y and z acceleration recorded by the native layer.
+- **Latest sample**: `getMeasurement()` returns the latest cached x, y and z acceleration from Core Motion on iOS, `SensorManager` on Android and browser motion events on web. Before the first web motion event it returns zeros.
 - **Live updates**: `startMeasurementUpdates()` streams readings to the `measurement` listener until `stopMeasurementUpdates()`.
-- **Availability check**: `isAvailable()` tells you whether the device has an accelerometer.
+- **Availability check**: `isAvailable()` reports accelerometer availability on iOS and Android, and browser motion API support on web.
 - **Permissions**: `checkPermissions()` and `requestPermissions()` handle motion access where the platform requires it.
 - **Platforms**: iOS, Android and Web. iOS uses Core Motion, Android uses `SensorManager`, and web listens to browser motion events.
 
